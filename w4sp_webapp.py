@@ -528,4 +528,5 @@ if __name__ == '__main__':
     time.sleep(3)
     print('[*] Lab Launched, Starting Browser')
     print('[*] Do not close this terminal. Closing Terminal will terminate lab.')
-    subprocess.call(['su', '-', 'w4sp-lab', '-c', 'firefox 127.0.0.1:5000'])
+#    subprocess.call(['su', '-', 'w4sp-lab', '-c', 'firefox 127.0.0.1:5000'])
+    subprocess.call(['su', '-', 'w4sp-lab', '-c', 'firefox 127.0.0.1:5000', '--whitelist-environment=DISPLAY'])
