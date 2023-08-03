@@ -2,9 +2,12 @@
 FROM w4sp/labs:base
 
 RUN git clone https://github.com/secdev/scapy.git
-RUN cd scapy && python setup.py install
+RUN python --version
+# RUN cd scapy && python setup.py install
+# attempting checkout of scapy version 2.5.0
+RUN cd scapy && git checkout tags/v2.5.0 && python setup.py install
 
-RUN git clone https://gitlab.cern.ch/smm-rme/pysmbclient.git
+RUN git clone https://github.com/opinkerfi/pysmbclient.git
 RUN cd pysmbclient && python setup.py install
 RUN apt-get install -y winbind dhcping
 
