@@ -106,7 +106,7 @@ def setup_network2(h_if):
     ns_root.enter_ns()
 
     #ensure network manager doesn't mess with anything
-    r('service network-manager stop')
+    r('service NetworkManager stop') #changed network-manager to NetworkManager so shutwork will work properly
     r('ip link set $nic name w4sp_lab')
     #p = Process(target=r, args=('dhclient -v w4sp_lab',))
     #p.start()
@@ -248,7 +248,7 @@ def setup_network(h_if):
     ns_root.enter_ns()
 
     #ensure network manager doesn't mess with anything
-    r('service network-manager stop')
+    r('service NetworkManager stop') # changed network-manager to NetworkManager so environment shutwork will work properly
     r('ip link set $nic name w4sp_lab')
     #p = Process(target=r, args=('dhclient -v w4sp_lab',))
     #p.start()
