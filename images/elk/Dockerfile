@@ -6,9 +6,9 @@ RUN apt-get install apt-transport-https
 RUN echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D27D666CD88E42B4
-RUN apt-get update -q
-RUN sudo apt-get install elasticsearch
-RUN apt-get -y install default-jre-headless
+RUN sudo apt update
+RUN sudo apt -y install elasticsearch
+RUN sudo apt -y install default-jre-headless
 
 ENV KIBANA_VERSION 4.4.1 
 
