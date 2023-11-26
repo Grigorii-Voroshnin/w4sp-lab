@@ -1,8 +1,11 @@
 #import from w4sp base
 FROM w4sp/labs:base
 
-RUN git clone https://github.com/secdev/scapy.git
-RUN cd scapy && python setup.py install
+RUN sudo apt -y intall wget
+RUN sudo wget https://github.com/secdev/scapy/archive/refs/tags/v2.5.0.tar.gz
+RUN sudo tar -xvf v2.5.0.tar.gz
+RUN cd scapy-2.5.0
+RUN sudo python setup.py install
 
 RUN git clone https://gitlab.cern.ch/smm-rme/pysmbclient.git
 RUN cd pysmbclient && python setup.py install
