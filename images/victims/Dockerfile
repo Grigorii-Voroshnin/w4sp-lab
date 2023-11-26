@@ -7,8 +7,10 @@ RUN sudo tar -xvf v2.5.0.tar.gz
 RUN cd scapy-2.5.0
 RUN sudo python setup.py install
 
-RUN git clone https://gitlab.cern.ch/smm-rme/pysmbclient.git
-RUN cd pysmbclient && python setup.py install
+RUN sudo wget https://github.com/jbsilva/pysmbclient/archive/refs/heads/main.zip
+RUN sudo apt install unzip
+RUN sudo unzip main.zip
+RUN cd pysmbclient-main && python setup.py install
 RUN apt-get install -y winbind dhcping
 
 #set dhclient.conf to be aggressive with dhcp requests
