@@ -1,7 +1,7 @@
 #import from w4sp base
 FROM w4sp/labs:base
 
-RUN sudo apt -y intall wget
+RUN sudo apt -y install wget
 RUN sudo wget https://github.com/secdev/scapy/archive/refs/tags/v2.5.0.tar.gz
 RUN sudo tar -xvf v2.5.0.tar.gz
 RUN cd scapy-2.5.0
